@@ -2,6 +2,7 @@ const express=require('express')
 const hbs=require('hbs')
 const path=require('path')
 const app=express()
+const port=process.env.PORT || 3000
 const geocode=require('./geocode')
 const weather=require('./weather')
 
@@ -69,4 +70,6 @@ app.get('',(req,res)=>{
 
 
 
-app.listen('3000')
+app.listen(port,()=>{
+    console.log("server on port"+port)
+})
